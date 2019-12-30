@@ -31,7 +31,7 @@ const Contact = () => (
             </Wrapper>
             <div className="column-wrapper">
                 <div className="column">
-                    <CircleIcon src="/static/images/tel.svg" />
+                    <CircleIcon src="/images/tel.svg" />
                     <div className="column-content">
                         <SubHeading title="Kontakt" level={4} />
                         <p className="paragraph">
@@ -51,7 +51,7 @@ const Contact = () => (
                     </div>
                 </div>
                 <div className="column">
-                    <CircleIcon src="/static/images/home.svg" />
+                    <CircleIcon src="/images/home.svg" />
                     <div className="column-content">
                         <SubHeading title="Sídlo" level={4} />
                         <p>Mariánske námestie</p>
@@ -59,7 +59,7 @@ const Contact = () => (
                     </div>
                 </div>
                 <div className="column">
-                    <CircleIcon src="/static/images/location.svg" />
+                    <CircleIcon src="/images/location.svg" />
                     <div className="column-content">
                         <SubHeading title="Kde nás teraz nájdete" level={4} />
                         <p>Mokrohájska cesta 6</p>

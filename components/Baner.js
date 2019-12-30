@@ -16,7 +16,7 @@ export default ({ title, body, _id }) => (
             }}
             layers={[
                 {
-                    image: "/static/images/icon.jpg",
+                    image: "/images/icon.jpg",
                     amount: 0.2,
                 },
             ]}
@@ -27,7 +27,7 @@ export default ({ title, body, _id }) => (
                 <Link href={`articles/${_id}`}>
                     <a className="baner-button">
                         <span>Čítať viac</span>
-                        <img src="/static/images/arrow.svg" />
+                        <img src="/images/arrow.svg" />
                     </a>
                 </Link>
             </div>
