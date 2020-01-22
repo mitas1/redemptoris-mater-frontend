@@ -79,7 +79,7 @@ export const Donation = () => (
         <style jsx>{`
             .donation {
                 width: 100%;
-                background-image: url("/static/images/icon2.jpg");
+                background-image: url("/images/icon2.jpg");
                 background-size: cover;
                 padding: 100px 24px;
                 box-sizing: border-box;
