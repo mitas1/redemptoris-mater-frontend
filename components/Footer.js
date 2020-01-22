@@ -22,10 +22,7 @@ export default () => {
                 <p>Mokrohájska cesta 6</p>
                 <p>841 04 Bratislava</p>
             </div>
-            <div className="footer-column">
-                <Heading title="Na stiahnutie" level={4} />
-                <p className="download-link">Formulár na poukázanie 2% z dane</p>
-            </div>
+            <div className="footer-column" />
             <style>
                 {`
                 .footer {
