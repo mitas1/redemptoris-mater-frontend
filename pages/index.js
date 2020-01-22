@@ -63,14 +63,15 @@ const ShortArticle = ({ publishedAt, title, bodyPreview, _id }) => {
     );
 };
 
-export const Donation = () => (
+export const Donation = ({file}) => (
     <div className="donation">
         <Content>
             <div className="donation-square">
                 <h1 className="heading">Podporiť nás môžete</h1>
                 <br />
                 <p>Poukázaním 2% z dane. Každý rok, začiatkom roka</p>
-                <div className="download-button">Stiahnuť formulár</div>
+                <a className={`${file && 'enabled'} download-button`}
+                    href={file ? `${file}?dl=` : '#'}>Stiahnuť formulár</a>
                 <br />
                 <p>Alebo platbou na účet</p>
                 <span className="iban">2921 8921 45/1100</span>
@@ -110,8 +111,14 @@ export const Donation = () => (
                 width: auto;
                 background-color: #006cb9;
                 opacity: 0.4;
+                color: #fff;
+                text-decoration: none;
                 border-radius: 3px;
                 cursor: not-allowed;
+            }
+            .download-button.enabled {
+                cursor: pointer;
+                opacity: 1;
             }
             .iban {
                 font-size: 36px;
@@ -133,7 +140,7 @@ export const Donation = () => (
     </div>
 );
 
-const Index = ({ items: { article, mainArticle } }) => (
+const Index = ({ items: { article, mainArticle, donationForm } }) => (
     <Layout>
         <Baner
             _id={mainArticle._id}
@@ -149,7 +156,7 @@ const Index = ({ items: { article, mainArticle } }) => (
             </div>
         </Content>
         <Element name="donation">
-            <Donation />
+            <Donation file={donationForm.url} />
         </Element>
         <style jsx>{`
             .baner {
@@ -172,6 +179,9 @@ Index.getInitialProps = async () => {
     return {
         items: await sanity.fetch(`{
             'mainArticle': *[_type == "mainArticle"][0],
+            'donationForm': *[_type == 'settings'][0] {
+                "url": donationForm.asset->url
+            },
             'article': *[_type == "article"]{
                 title,
                 _id,
