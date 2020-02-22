@@ -41,6 +41,7 @@ const ShortArticle = ({ publishedAt, title, bodyPreview, _id }) => {
                 .short-article-title {
                     font-family: ${PRIMARY_FONT};
                     font-size: 20px;
+                    line-height: 28px;
                 }
                 .short-article-text {
                     margin: 16px 48px 16px 0;
