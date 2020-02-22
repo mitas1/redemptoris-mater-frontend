@@ -4,6 +4,8 @@ import Layout from "../components/Layout";
 import Heading, { SubHeading } from "../components/Heading";
 import Content from "../components/Content";
 import { Wrapper } from "../components/Article";
+import { IBAN } from "../constants/contact";
+import { Column1, Column2, Column3 } from "../components/Footer";
 
 const CircleIcon = ({ src }) => (
     <div className="wrapper">
@@ -34,36 +36,24 @@ const Contact = () => (
                     <CircleIcon src="/images/tel.svg" />
                     <div className="column-content">
                         <SubHeading title="Kontakt" level={4} />
-                        <p className="paragraph">
-                            Rektor seminára Ján Hlávka
-                            <br />
-                            Tel.:{" "}
-                            <a href="tel:+421 914 139 062">+421 914 139 062</a>
-                            <br />
-                            Email:{" "}
-                            <a href="mailto:rm.zilina@gmail.com">
-                                rm.zilina@gmail.com
-                            </a>
-                        </p>
+                        <Column1/>
                         <p className="paragraph"></p>
                         <SubHeading title="Číslo účtu" level={4} />
-                        <p>Číslo účtu: 2921892145/1100</p>
+                        <p>{IBAN}</p>
                     </div>
                 </div>
                 <div className="column">
                     <CircleIcon src="/images/home.svg" />
                     <div className="column-content">
                         <SubHeading title="Sídlo" level={4} />
-                        <p>Mariánske námestie</p>
-                        <p>23 010 01 Žilina</p>
+                        <Column2/>
                     </div>
                 </div>
                 <div className="column">
                     <CircleIcon src="/images/location.svg" />
                     <div className="column-content">
                         <SubHeading title="Kde nás teraz nájdete" level={4} />
-                        <p>Mokrohájska cesta 6</p>
-                        <p>841 04 Bratislava</p>
+                        <Column3/>
                     </div>
                 </div>
             </div>
@@ -84,7 +74,7 @@ const Contact = () => (
                     }
                     .column {
                         flex: 1;
-                        display: block;
+                        display: flex;
                     }
                     .column-content {
                         float: left;
@@ -93,9 +83,6 @@ const Contact = () => (
                         font-size: 14px;
                         line-height: 1.4;
                         margin: 0 0 0 20px;
-                    }
-                    .column-content :global(a) {
-                        color: #000;
                     }
                     .paragraph {
                         margin: 0 0 20px;
