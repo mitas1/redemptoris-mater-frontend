@@ -11,6 +11,7 @@ import Baner from "../components/Baner";
 
 import Scroll from "react-scroll";
 import { PRIMARY_FONT, DATETIME_MASK } from "../constants";
+import { IBAN } from "../constants/contact";
 
 const Element = Scroll.Element;
 
@@ -74,7 +75,7 @@ export const Donation = ({file}) => (
                     href={file ? `${file}?dl=` : '#'}>Stiahnuť formulár</a>
                 <br />
                 <p>Alebo platbou na účet</p>
-                <span className="iban">2921 8921 45/1100</span>
+                <span className="iban">{IBAN}</span>
             </div>
         </Content>
         <style jsx>{`
@@ -95,10 +96,10 @@ export const Donation = ({file}) => (
                 font-size: 34px;
             }
             .donation-square {
-                width: 500px;
+                width: 560px;
                 background-color: #000;
                 color: #fff;
-                padding: 60px 48px;
+                padding: 60px 48px 90px 48px;
                 align-items: flex-start;
                 display: flex;
                 flex-direction: column;
@@ -121,7 +122,7 @@ export const Donation = ({file}) => (
                 opacity: 1;
             }
             .iban {
-                font-size: 36px;
+                font-size: 30px;
                 font-family: ${PRIMARY_FONT};
             }
             @media screen and (max-width: 992px) {
@@ -133,7 +134,7 @@ export const Donation = ({file}) => (
                     padding: 48px;
                 }
                 .iban {
-                    font-size: 28px;
+                    font-size: 20px;
                 }
             }
         `}</style>
