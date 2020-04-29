@@ -33,6 +33,7 @@ export default ({ images }) => {
                             .size(...SIZES[i])
                             .quality(100)
                             .url()}
+                        alt="Náhľad"
                     />
                 </a>
             ))}
@@ -47,6 +48,7 @@ export default ({ images }) => {
                             .size(400, 300)
                             .quality(100)
                             .url()}
+                            alt="Zmenšený náhľad"
                     />
                 </a>
             ))}

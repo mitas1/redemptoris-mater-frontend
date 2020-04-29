@@ -48,6 +48,7 @@ const ShortArticle = ({ date, title, bodyPreview, mainImage, _id }) => {
                                     .size(300, 200)
                                     .quality(100)
                                     .url()}
+                                alt="Obrázok článku"
                             />
                         </a>
                     </Link>
@@ -65,6 +66,7 @@ const ShortArticle = ({ date, title, bodyPreview, mainImage, _id }) => {
                                         .size(400, 180)
                                         .quality(100)
                                         .url()}
+                                    alt="Obrázok článku"
                                 />
                             </a>
                         </Link>
