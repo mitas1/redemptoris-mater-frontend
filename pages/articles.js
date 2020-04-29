@@ -41,7 +41,7 @@ const ShortArticle = ({ date, title, bodyPreview, mainImage, _id }) => {
         <div className="short-article-wrapper">
             <div className="image">
                 {mainImage && (
-                    <Link href={`articles/${_id}`}>
+                    <Link href="articles/[id]" as={`articles/${_id}`}>
                         <a>
                             <img
                                 src={urlFor(mainImage)
@@ -59,7 +59,7 @@ const ShortArticle = ({ date, title, bodyPreview, mainImage, _id }) => {
                 <h2 className="short-article-title">{title}</h2>
                 {mainImage && (
                     <div className="image-smartphone">
-                        <Link href={`articles/${_id}`}>
+                        <Link href="articles/[id]" as={`articles/${_id}`}>
                             <a>
                                 <img
                                     src={urlFor(mainImage)
@@ -73,7 +73,7 @@ const ShortArticle = ({ date, title, bodyPreview, mainImage, _id }) => {
                     </div>
                 )}
                 <p className="short-article-text">{bodyPreview}</p>
-                <NavLink href={`articles/${_id}`}>Čítať viac</NavLink>
+                <NavLink href="articles/[id]" as={`articles/${_id}`} >Čítať viac</NavLink>
             </article>
             <style jsx>{`
                 .image {

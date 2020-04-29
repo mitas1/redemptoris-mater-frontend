@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-export const NavLink = ({ href, children, back }) => (
-    <Link href={href}>
+export const NavLink = ({ href, as, children, back }) => (
+    <Link href={href} as={as}>
         <a className="link">
             {back && <img height={8} src="/images/arrow_back.svg" alt="Šípka späť" />}
             {children}

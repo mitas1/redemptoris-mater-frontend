@@ -23,7 +23,7 @@ const ShortArticle = ({ publishedAt, title, bodyPreview, _id }) => {
             <span className="short-article-date">{dateTime}</span>
             <h2 className="short-article-title">{title}</h2>
             <p className="short-article-text">{bodyPreview}</p>
-            <NavLink href={`articles/${_id}`}>Čítať viac</NavLink>
+            <NavLink href="articles/[id]"  as={`articles/${_id}`}>Čítať viac</NavLink>
             <style jsx>{`
                 .short-article {
                     flex: 1;
