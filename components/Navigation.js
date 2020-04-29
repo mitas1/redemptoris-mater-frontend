@@ -3,9 +3,9 @@ import Link from "next/link";
 export const NavLink = ({ href, children, back }) => (
     <Link href={href}>
         <a className="link">
-            {back && <img height={8} src="/images/arrow_back.svg" />}
+            {back && <img height={8} src="/images/arrow_back.svg" alt="Šípka späť" />}
             {children}
-            {!back && <img height={8} src="/images/arrow_next.svg" />}
+            {!back && <img height={8} src="/images/arrow_next.svg" alt="Šípka ďalej" />}
             <style jsx>{`
                 .link {
                     margin-top: 64px;

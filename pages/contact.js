@@ -9,7 +9,7 @@ import { Column1, Column2, Column3 } from "../components/Footer";
 
 const CircleIcon = ({ src }) => (
     <div className="wrapper">
-        <img src={src} />
+        <img src={src} alt="Ikona" />
         <style jsx>{`
             .wrapper {
                 width: 50px;

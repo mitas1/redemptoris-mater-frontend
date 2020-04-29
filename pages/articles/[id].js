@@ -131,6 +131,7 @@ const Article = ({ article, error }) => {
                             .size(900, 450)
                             .quality(100)
                             .url()}
+                        alt="Hlavný obrázok"
                         className="image"
                     />
                 )}

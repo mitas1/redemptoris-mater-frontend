@@ -4,7 +4,7 @@ import { PRIMARY_FONT } from "../constants";
 export default ({ title, handleDrawer, handleDrawerClose }) => (
     <div className="wrapper">
         <a href="/" className="logo">
-            <img src="/images/logo.svg" />
+            <img src="/images/logo.svg" alt="Logo" />
         </a>
         <div className="title">
             Diecézny misijný seminár v Žiline
@@ -12,7 +12,7 @@ export default ({ title, handleDrawer, handleDrawerClose }) => (
             <strong>Redemptoris Mater</strong>
         </div>
         <a className="smartphone-menu" onClick={handleDrawer}>
-            <img src="/images/menu.svg" />
+            <img src="/images/menu.svg" alt="Menu" />
         </a>
         <div className="menu">
             <Menu closeDrawer={handleDrawerClose} />

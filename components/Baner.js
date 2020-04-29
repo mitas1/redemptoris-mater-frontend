@@ -27,7 +27,7 @@ export default ({ title, body, _id }) => (
                 <Link href={`articles/${_id}`}>
                     <a className="baner-button">
                         <span>Čítať viac</span>
-                        <img src="/images/arrow.svg" />
+                        <img src="/images/arrow.svg" alt="Čítať viac" />
                     </a>
                 </Link>
             </div>
