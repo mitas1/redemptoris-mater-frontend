@@ -1,10 +1,1 @@
-
-<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Artboard-Copy-9" transform="translate(-437.000000, -672.000000)" fill="#010101" fill-rule="nonzero">
-            <g id="arrow-right" transform="translate(437.000000, 672.000000)">
-                <path d="M11.707,5.293 L7,0.586 L5.586,2 L8.586,5 L0,5 L0,7 L8.586,7 L5.586,10 L7,11.414 L11.707,6.707 C12.0973819,6.31650015 12.0973819,5.68349985 11.707,5.293 Z" id="Path"></path>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="12" height="12" xmlns="http://www.w3.org/2000/svg"><path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fill="#010101"/></svg>

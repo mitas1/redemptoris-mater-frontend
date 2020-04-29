@@ -19,7 +19,7 @@ export default class MyApp extends App {
                 <Head>
                     <title>Redemptoris mater</title>
                     <link
-                        href="https://fonts.googleapis.com/css?family=Martel:600,700,900"
+                        href="https://fonts.googleapis.com/css?family=Martel:600,700,900&display=swap"
                         rel="stylesheet"
                     />
                     <meta charset="UTF-8"/>
