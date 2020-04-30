@@ -11,7 +11,6 @@ import Gallery from "../../components/Gallery";
 import Layout from "../../components/Layout";
 import Content from "../../components/Content";
 import Heading from "../../components/Heading";
-import "react-image-lightbox/style.css";
 import { PRIMARY_FONT, DATETIME_MASK } from "../../constants";
 
 export const ArticleContent = ({ children, negativeMargin }) => (

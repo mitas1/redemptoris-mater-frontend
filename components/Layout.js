@@ -6,7 +6,6 @@ import Menu from "./Menu";
 
 import Drawer from "@material/react-drawer";
 
-import "@material/react-drawer/dist/drawer.css";
 import { PRIMARY_FONT, SECONDARY_FONT } from "../constants";
 
 export default ({ children }) => {
