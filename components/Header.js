@@ -12,7 +12,7 @@ export default ({ title, handleDrawer, handleDrawerClose }) => (
             <strong>Redemptoris Mater</strong>
         </div>
         <a className="smartphone-menu" onClick={handleDrawer}>
-            <img src="/images/menu.svg" alt="Menu" />
+            <img src="/images/menu.svg" className="icon" alt="Menu" />
         </a>
         <div className="menu">
             <Menu closeDrawer={handleDrawerClose} />
@@ -56,6 +56,12 @@ export default ({ title, handleDrawer, handleDrawerClose }) => (
                     display: flex;
                     width: 48px;
                     height: 48px;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .icon {
+                    width: 24px;
+                    height: 24px;
                 }
                 .menu {
                     display: none;
