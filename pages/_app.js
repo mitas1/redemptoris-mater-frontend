@@ -23,6 +23,7 @@ export default class MyApp extends App {
                         rel="stylesheet"
                     />
                     <meta charset="UTF-8"/>
+                    <meta name="google-site-verification" content="4cQQ95yeqzUWnoWNvYC0hfDr39TwAMCkiE_H43OBXaA" />
                     <meta name="description" content="Diecézny misijný medzinárodný seminár Redemptoris Mater v Žiline." />
                     <meta name="keywords" content="Redemptoris Mater, Žilina, Seminár" />
                     <meta
