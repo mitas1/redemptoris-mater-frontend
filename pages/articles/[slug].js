@@ -179,10 +179,10 @@ const Article = ({ article, error }) => {
     );
 };
 
-Article.getInitialProps = async function({ query: { id } }) {
-    const type = id === "main-article" ? "mainArticle" : "article";
+Article.getInitialProps = async function({ query: { slug } }) {
+    const type = slug === "misia-seminarov-redemptoris-mater" ? "mainArticle" : "article";
     const article = await sanity.fetch(
-        `*[_type == "${type}" && _id == "${id}"]{
+        `*[_type == "${type}" && slug.current == "${slug}"]{
             title,
             body,
             mainImage,

@@ -7,7 +7,7 @@ import { PRIMARY_FONT } from "../constants";
 const CONTENT_WIDTH = "1100px";
 const BANER_HEIGHT = "600px";
 
-export default ({ title, body, _id }) => (
+export default ({ title, body, slug }) => (
     <ParallaxProvider>
         <ParallaxBanner
             className="baner"
@@ -24,7 +24,7 @@ export default ({ title, body, _id }) => (
             <div className="baner-heading-wrapper">
                 <h1 className="baner-heading">{title}</h1>
                 <span className="baner-text">{body}</span>
-                <Link href="articles/[id]" as={`articles/${_id}`}>
+                <Link href="articles/[slug]" as={`articles/${slug.current}`}>
                     <a className="baner-button">
                         <span>Čítať viac</span>
                         <img src="/images/arrow.svg" alt="Čítať viac" />

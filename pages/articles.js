@@ -34,14 +34,14 @@ const Button = ({ title, ...rest }) => {
     );
 };
 
-const ShortArticle = ({ date, title, bodyPreview, mainImage, _id }) => {
+const ShortArticle = ({ date, title, bodyPreview, mainImage, slug }) => {
     const dateTime = moment(date).format(DATETIME_MASK);
 
     return (
         <div className="short-article-wrapper">
             <div className="image">
                 {mainImage && (
-                    <Link href="articles/[id]" as={`articles/${_id}`}>
+                    <Link href="articles/[slug]" as={`articles/${slug.current}`}>
                         <a>
                             <img
                                 src={urlFor(mainImage)
@@ -59,7 +59,7 @@ const ShortArticle = ({ date, title, bodyPreview, mainImage, _id }) => {
                 <h2 className="short-article-title">{title}</h2>
                 {mainImage && (
                     <div className="image-smartphone">
-                        <Link href="articles/[id]" as={`articles/${_id}`}>
+                        <Link href="articles/[slug]" as={`articles/${slug.current}`}>
                             <a>
                                 <img
                                     src={urlFor(mainImage)
@@ -73,7 +73,7 @@ const ShortArticle = ({ date, title, bodyPreview, mainImage, _id }) => {
                     </div>
                 )}
                 <p className="short-article-text">{bodyPreview}</p>
-                <NavLink href="articles/[id]" as={`articles/${_id}`} >Čítať viac</NavLink>
+                <NavLink href="articles/[slug]" as={`articles/${slug.current}`} >Čítať viac</NavLink>
             </article>
             <style jsx>{`
                 .image {
@@ -164,7 +164,7 @@ const Articles = ({ articles: { count, ...articles }, skip }) => {
             'gal': *[_type == "article" && defined(gallery)]{gallery[1]{asset->{url}}},
             'items': *[_type == "article"]{
                 title,
-                _id,
+                slug,
                 publishedAt,
                 body,
                 mainImage,
@@ -197,7 +197,7 @@ const Articles = ({ articles: { count, ...articles }, skip }) => {
                             mainImage={item.mainImage}
                             date={item.publishedAt}
                             bodyPreview={item.bodyPreview}
-                            _id={item._id}
+                            slug={item.slug}
                             title={item.title}
                         ></ShortArticle>
                     ))}
@@ -235,7 +235,7 @@ Articles.getInitialProps = async () => {
             'gal': *[_type == "article" && defined(gallery)]{gallery[1]{asset->{url}}},
             'items': *[_type == "article"]{
                 title,
-                _id,
+                slug,
                 publishedAt,
                 body,
                 mainImage,
