@@ -26,6 +26,7 @@ export default class MyApp extends App {
                         href="https://fonts.googleapis.com/css?family=Martel:600,700,900&display=swap"
                         rel="stylesheet"
                     />
+                    <link rel="shortcut icon" href="/images/favicon.ico" />
                     <link rel="icon" href="/images/favicon-48x48.png" sizes="48x48" />
                     <link rel="icon" href="/images/favicon-96x96.png" sizes="96x96" />
                     <link rel="icon" href="/images/favicon-144x144.png" sizes="144x144" />
