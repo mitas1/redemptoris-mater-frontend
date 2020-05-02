@@ -55,7 +55,7 @@ export default ({ smartphone, closeDrawer }) => {
                     Chcem podporiť
                 </a>
             ) : (
-                <Link href="donation">
+                <Link href="/donation">
                     <a className="item-accent">Chcem podporiť</a>
                 </Link>
             )}

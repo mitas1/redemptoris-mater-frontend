@@ -15,7 +15,7 @@ import { IBAN } from "../constants/contact";
 
 const Element = Scroll.Element;
 
-const ShortArticle = ({ publishedAt, title, bodyPreview, _id }) => {
+const ShortArticle = ({ publishedAt, title, bodyPreview, slug }) => {
     const dateTime = moment(publishedAt).format(DATETIME_MASK);
 
     return (
@@ -23,7 +23,7 @@ const ShortArticle = ({ publishedAt, title, bodyPreview, _id }) => {
             <span className="short-article-date">{dateTime}</span>
             <h2 className="short-article-title">{title}</h2>
             <p className="short-article-text">{bodyPreview}</p>
-            <NavLink href="articles/[id]"  as={`articles/${_id}`}>Čítať viac</NavLink>
+            <NavLink href="articles/[slug]"  as={`articles/${slug.current}`}>Čítať viac</NavLink>
             <style jsx>{`
                 .short-article {
                     flex: 1;
@@ -144,7 +144,7 @@ export const Donation = ({file}) => (
 const Index = ({ items: { article, mainArticle, donationForm } }) => (
     <Layout>
         <Baner
-            _id={mainArticle._id}
+            slug={mainArticle.slug}
             title={mainArticle.title}
             body={mainArticle.bodyPreview}
         />
@@ -184,8 +184,10 @@ Index.getInitialProps = async () => {
                 "url": donationForm.asset->url
             },
             'article': *[_type == "article"]{
-                title,
                 _id,
+                slug,
+                title,
+                slug,
                 publishedAt,
                 bodyPreview,
             } | order(publishedAt desc) [0..2]
