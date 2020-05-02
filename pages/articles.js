@@ -2,13 +2,14 @@ import React from "react";
 import sanity from "../lib/sanity";
 
 import Link from "next/link";
+import Head from "next/head";
 
 import moment from "moment";
 import { urlFor } from "../utils/sanity";
 import { ListWrapper } from "../components/Article";
 import Layout from "../components/Layout";
 import Heading from "../components/Heading";
-import { PRIMARY_FONT, DATETIME_MASK } from "../constants";
+import { PRIMARY_FONT, DATETIME_MASK, PAGE_TITLE } from "../constants";
 import { NavLink } from "../components/Navigation";
 
 const INITIAL_COUNT_FETCHED = 5;
@@ -182,6 +183,9 @@ const Articles = ({ articles: { count, ...articles }, skip }) => {
 
     return (
         <Layout>
+            <Head>
+                <title>{`Naše dejiny | ${PAGE_TITLE}`}</title>
+            </Head>
             <ListWrapper>
                 <div className="heading">
                     <Heading

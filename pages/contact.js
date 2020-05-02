@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 
 import Layout from "../components/Layout";
 import Heading, { SubHeading } from "../components/Heading";
@@ -6,6 +7,7 @@ import Content from "../components/Content";
 import { Wrapper } from "../components/Article";
 import { IBAN } from "../constants/contact";
 import { Column1, Column2, Column3 } from "../components/Footer";
+import { PAGE_TITLE } from "../constants";
 
 const CircleIcon = ({ src }) => (
     <div className="wrapper">
@@ -27,6 +29,9 @@ const CircleIcon = ({ src }) => (
 
 const Contact = () => (
     <Layout>
+        <Head>
+            <title>{`Kontakt | ${PAGE_TITLE}`}</title>
+        </Head>
         <Content>
             <Wrapper>
                 <Heading withSpacing title="Kontakt" level={2}></Heading>

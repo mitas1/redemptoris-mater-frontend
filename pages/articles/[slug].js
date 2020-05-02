@@ -1,5 +1,6 @@
 import React from "react";
 import ErrorPage from "next/error";
+import Head from 'next/head';
 import BlockContent from "@sanity/block-content-to-react";
 import moment from "moment";
 
@@ -11,7 +12,7 @@ import Gallery from "../../components/Gallery";
 import Layout from "../../components/Layout";
 import Content from "../../components/Content";
 import Heading from "../../components/Heading";
-import { PRIMARY_FONT, DATETIME_MASK } from "../../constants";
+import { PRIMARY_FONT, DATETIME_MASK, PAGE_TITLE } from "../../constants";
 
 export const ArticleContent = ({ children, negativeMargin }) => (
     <div className={negativeMargin ? "negative content" : "content"}>
@@ -112,6 +113,9 @@ const Article = ({ article, error }) => {
 
     return (
         <Layout>
+            <Head>
+                <title>{`${article.title} | ${PAGE_TITLE}`}</title>
+            </Head>
             <Content>
                 <Wrapper>
                     <Heading title={article.title} level={2}></Heading>
