@@ -40,7 +40,8 @@ export default class MyApp extends App {
                         content="4cQQ95yeqzUWnoWNvYC0hfDr39TwAMCkiE_H43OBXaA" />
                     <meta name="description"
                         content="Diecézny misijný medzinárodný seminár Redemptoris Mater v Žiline." />
-                    <meta name="keywords" content="Redemptoris Mater, Žilina, Seminár" />
+                    <meta name="keywords" content="Redemptoris Mater, Žilina, Seminár, Slovensko,
+                        sk, Diecézny misijný seminár, neokatechumenátna cesta, Slovakia" />
                     <meta
                         name="viewport"
                         content="width=device-width, initial-scale=1.0"

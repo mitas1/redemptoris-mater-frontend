@@ -115,6 +115,7 @@ const Article = ({ article, error }) => {
         <Layout>
             <Head>
                 <title>{`${article.title} | ${PAGE_TITLE}`}</title>
+                <meta name="description" content={article.bodyPreview} />
             </Head>
             <Content>
                 <Wrapper>
@@ -188,6 +189,7 @@ Article.getInitialProps = async function({ query: { slug } }) {
     const article = await sanity.fetch(
         `*[_type == "${type}" && slug.current == "${slug}"]{
             title,
+            bodyPreview,
             body,
             mainImage,
             publishedAt,
