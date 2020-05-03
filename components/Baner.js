@@ -24,7 +24,7 @@ export default ({ title, body, slug }) => (
             <div className="baner-heading-wrapper">
                 <h1 className="baner-heading">{title}</h1>
                 <span className="baner-text">{body}</span>
-                <Link href="articles/[slug]" as={`articles/${slug.current}`}>
+                <Link href="/articles/[slug]" as={`/articles/${slug.current}`}>
                     <a className="baner-button">
                         <span>Čítať viac</span>
                         <img src="/images/arrow.svg" alt="Čítať viac" />
