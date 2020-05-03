@@ -5,7 +5,7 @@ import Layout from "../components/Layout";
 import Heading, { SubHeading } from "../components/Heading";
 import Content from "../components/Content";
 import { Wrapper } from "../components/Article";
-import { IBAN } from "../constants/contact";
+import { IBAN, CONTACT_PERSON, CONTACT_NUMBER, CONTACT_EMAIL } from "../constants/contact";
 import { Column1, Column2, Column3 } from "../components/Footer";
 import { PAGE_TITLE } from "../constants";
 
@@ -31,6 +31,7 @@ const Contact = () => (
     <Layout>
         <Head>
             <title>{`Kontakt | ${PAGE_TITLE}`}</title>
+            <meta name="description" content={`Rektor seminára ${CONTACT_PERSON}, Tel.:${CONTACT_NUMBER}, Email: ${CONTACT_EMAIL}, IBAN: ${IBAN}, Adresa: Mokrohájska cesta 6 841 04 Bratislava`} />
         </Head>
         <Content>
             <Wrapper>

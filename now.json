@@ -89,5 +89,17 @@
         "headers": {
             "Location": "/articles/rekolekcie-v-ziline"
         }
+    }, {
+        "src": "/articles/1e6c2a4f-4b41-45c2-b014-e6e08b1d6e23",
+        "status": 301,
+        "headers": {
+            "Location": "/articles/porto-san-giorgio-6-9-9-9"
+        }
+    }, {
+        "src": "/articles/main-article",
+        "status": 301,
+        "headers": {
+            "Location": "/articles/misia-seminarov-redemptoris-mater"
+        }
     }]
 }
