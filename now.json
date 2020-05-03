@@ -65,5 +65,29 @@
         "headers": {
             "Location": "/articles/diakonska-vysviacka-petra-botha"
         }
+    }, {
+        "src": "/index.php",
+        "status": 301,
+        "headers": {
+            "Location": "/"
+        }
+    }, {
+        "src": "/articles/b12c07a0-af0f-4465-a5a4-90c11d1c2fdc",
+        "status": 301,
+        "headers": {
+            "Location": "/articles/krizova-cesta-maria-ellend"
+        }
+    }, {
+        "src": "/articles/70814c91-e856-48b9-938f-7836b06cc823",
+        "status": 301,
+        "headers": {
+            "Location": "/articles/pascha-2020"
+        }
+    }, {
+        "src": "/articles/3f1da8ca-3a0d-4d80-9cfa-d3b644b5b480",
+        "status": 301,
+        "headers": {
+            "Location": "/articles/rekolekcie-v-ziline"
+        }
     }]
 }
