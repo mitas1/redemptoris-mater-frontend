@@ -4,6 +4,8 @@ import App from "next/app";
 import NProgress from "nprogress";
 import Router from "next/router";
 
+import * as gtag from '../lib/gtag';
+
 import "@material/react-drawer/dist/drawer.css";
 import "react-image-lightbox/style.css";
 
@@ -12,7 +14,12 @@ import { PAGE_TITLE } from "../constants";
 Router.events.on("routeChangeStart", url => {
     NProgress.start();
 });
-Router.events.on("routeChangeComplete", () => NProgress.done());
+
+Router.events.on("routeChangeComplete", () => {
+    NProgress.done();
+    gtag.pageview(url);
+});
+
 Router.events.on("routeChangeError", () => NProgress.done());
 
 export default class MyApp extends App {
