@@ -65,7 +65,7 @@ export default ({ images }) => {
                 />
             )}
             <div className="clear"></div>
-            <style>{`
+            <style jsx>{`
             .clear{clear: both;}
                 .gallery-wrapper {
                     width: 900px;
