@@ -47,7 +47,7 @@ export default () => {
                 <Column3/>
             </div>
             <div className="footer-column"/>
-            <style>
+            <style jsx>
                 {`
                 .footer {
                     width: 1100px;
