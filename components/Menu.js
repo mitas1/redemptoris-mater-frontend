@@ -41,7 +41,7 @@ export default ({ smartphone, closeDrawer }) => {
             {MENU_ITEMS.map((item, index) => (
                 <Link key={index} href={item.href}>
                     <a
-                        tabIndex={index}
+                        tabIndex={0}
                         className={
                             pathname === item.href ? "item active" : "item"
                         }
