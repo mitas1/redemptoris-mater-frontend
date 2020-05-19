@@ -35,7 +35,7 @@ const ShortArticle = ({ publishedAt, title, bodyPreview, slug }) => {
                     border-right: none;
                 }
                 .short-article-date {
-                    color: #777;
+                    color: #767676;
                     font-size: 11px;
                 }
                 .short-article-title {
