@@ -1,7 +1,7 @@
 # Redemptoris mater frontend
 
 This repository is frontend written in [Next.js](https://nextjs.org/) for
-the [www.redemptorismater.sk](redemptorismater.sk) website.
+the [www.redemptorismater.sk](https://redemptorismater.sk) website.
 
 ## General requirements
 
