@@ -205,7 +205,9 @@ export async function getStaticProps({ params: { slug } }) {
     );
 
     if (article == null) {
-        return { error: 404 };
+        return {
+            notFound: true,
+        };
     }
 
     return {
