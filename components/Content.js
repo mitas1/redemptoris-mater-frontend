@@ -1,6 +1,6 @@
 import React from "react";
 
-export default ({ children, className }) => (
+const Content = ({ children, className }) => (
     <div className={className ? `${className} content` : "content"}>
         {children}
         <style jsx>{`
@@ -18,3 +18,5 @@ export default ({ children, className }) => (
         `}</style>
     </div>
 );
+
+export default Content;

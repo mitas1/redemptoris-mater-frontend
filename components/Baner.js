@@ -7,7 +7,7 @@ import { PRIMARY_FONT } from "../constants";
 const CONTENT_WIDTH = "1100px";
 const BANER_HEIGHT = "600px";
 
-export default ({ title, body, slug }) => (
+const Baner = ({ title, body, slug }) => (
     <ParallaxProvider>
         <ParallaxBanner
             className="baner"
@@ -103,3 +103,5 @@ export default ({ title, body, slug }) => (
         </ParallaxBanner>
     </ParallaxProvider>
 );
+
+export default Baner;

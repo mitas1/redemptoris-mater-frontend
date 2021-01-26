@@ -3,13 +3,17 @@ import Lightbox from "react-image-lightbox";
 
 import { urlFor } from "../utils/sanity";
 
-const SIZES = [[596, 504], [300, 250], [300, 250]];
+const SIZES = [
+    [596, 504],
+    [300, 250],
+    [300, 250],
+];
 
-export default ({ images }) => {
+const Gallery = ({ images }) => {
     const [index, setIndex] = React.useState(0);
     const [open, setOpen] = React.useState(false);
 
-    const handleClick = i => {
+    const handleClick = (i) => {
         setIndex(i);
         setOpen(true);
     };
@@ -44,11 +48,8 @@ export default ({ images }) => {
                     key={i}
                 >
                     <img
-                        src={urlFor(image)
-                            .size(400, 300)
-                            .quality(100)
-                            .url()}
-                            alt="Zmenšený náhľad"
+                        src={urlFor(image).size(400, 300).quality(100).url()}
+                        alt="Zmenšený náhľad"
                     />
                 </a>
             ))}
@@ -66,7 +67,9 @@ export default ({ images }) => {
             )}
             <div className="clear"></div>
             <style jsx>{`
-            .clear{clear: both;}
+                .clear {
+                    clear: both;
+                }
                 .gallery-wrapper {
                     width: 900px;
                     margin: 0 auto;
@@ -108,3 +111,5 @@ export default ({ images }) => {
         </div>
     );
 };
+
+export default Gallery;

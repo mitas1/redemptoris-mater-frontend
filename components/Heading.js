@@ -17,11 +17,13 @@ export const SubHeading = ({ title }) => (
     </h5>
 );
 
-export default ({ title, withSpacing, level = 3 }) => {
+const Heading = ({ title, withSpacing, level = 3 }) => {
     const Element = `h${level}`;
 
     return (
-        <Element className={withSpacing ? "spacing heading-title" : "heading-title"}>
+        <Element
+            className={withSpacing ? "spacing heading-title" : "heading-title"}
+        >
             {title}
             <style jsx>{`
                 .heading-title {
@@ -50,3 +52,5 @@ export default ({ title, withSpacing, level = 3 }) => {
         </Element>
     );
 };
+
+export default Heading;

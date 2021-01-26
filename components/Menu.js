@@ -19,7 +19,7 @@ const MENU_ITEMS = [
     },
 ];
 
-export default ({ smartphone, closeDrawer }) => {
+const Menu = ({ smartphone, closeDrawer }) => {
     const { pathname } = useRouter(null);
 
     const handleClick = () => {
@@ -101,3 +101,5 @@ export default ({ smartphone, closeDrawer }) => {
         </div>
     );
 };
+
+export default Menu;

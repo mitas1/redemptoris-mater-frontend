@@ -3,13 +3,13 @@ import Heading from "./Heading";
 import { CONTACT_NUMBER, IBAN, CONTACT_EMAIL } from "../constants/contact";
 
 const Column = ({ children }) => (
-    <p>
+    <div>
         {children}
         <style jsx>{`
             font-size: 14px;
             line-height: 1.5;
         `}</style>
-    </p>
+    </div>
 );
 
 export const Column1 = () => (
@@ -61,7 +61,7 @@ export const Column3 = () => (
     </Column>
 );
 
-export default () => {
+const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer-column">
@@ -106,3 +106,5 @@ export default () => {
         </footer>
     );
 };
+
+export default Footer;

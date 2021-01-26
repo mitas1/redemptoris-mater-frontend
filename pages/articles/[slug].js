@@ -1,6 +1,6 @@
 import React from "react";
 import ErrorPage from "next/error";
-import Head from 'next/head';
+import Head from "next/head";
 import BlockContent from "@sanity/block-content-to-react";
 import moment from "moment";
 
@@ -184,8 +184,12 @@ const Article = ({ article, error }) => {
     );
 };
 
-Article.getInitialProps = async function({ query: { slug } }) {
-    const type = slug === "misia-seminarov-redemptoris-mater" ? "mainArticle" : "article";
+export async function getStaticProps({ params: { slug } }) {
+    const type =
+        slug === "misia-seminarov-redemptoris-mater"
+            ? "mainArticle"
+            : "article";
+
     const article = await sanity.fetch(
         `*[_type == "${type}" && slug.current == "${slug}"]{
             title,
@@ -194,7 +198,7 @@ Article.getInitialProps = async function({ query: { slug } }) {
             mainImage,
             publishedAt,
             author->{name},
-            gallery[]{asset->{url}}}[0]`,
+            gallery[]{asset->{url}}}[0]`
     );
 
     if (article == null) {
@@ -202,8 +206,25 @@ Article.getInitialProps = async function({ query: { slug } }) {
     }
 
     return {
-        article,
+        props: { article },
     };
-};
+}
+
+export async function getStaticPaths() {
+    const paths = [];
+
+    const posts = await sanity.fetch(`
+        *[_type == "article"]{
+            slug,
+            'categories': categories[]->slug,
+        }
+    `);
+
+    for (const post of posts) {
+        paths.push({ params: { slug: post.slug.current } });
+    }
+
+    return { paths, fallback: true };
+}
 
 export default Article;

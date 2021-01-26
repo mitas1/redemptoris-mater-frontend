@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 
 import Header from "./Header";
 import Footer from "./Footer";
@@ -6,13 +7,81 @@ import Menu from "./Menu";
 
 import Drawer from "@material/react-drawer";
 
-import { PRIMARY_FONT, SECONDARY_FONT } from "../constants";
+import { PAGE_TITLE, SECONDARY_FONT } from "../constants";
+import { GA_TRACKING_ID } from "../lib/gtag";
 
-export default ({ children }) => {
+const Layout = ({ children }) => {
     const [open, setOpen] = React.useState(false);
 
     return (
         <div className="content">
+            <Head>
+                <meta charSet="UTF-8" />
+                <title>{PAGE_TITLE}</title>
+                <link
+                    href="https://fonts.googleapis.com/css?family=Martel:600,700,900&display=swap"
+                    rel="stylesheet"
+                />
+                <link
+                    rel="shortcut icon"
+                    href="/images/favicon.ico"
+                    key="favicon-ico"
+                />
+                <link
+                    rel="icon"
+                    href="/images/favicon-48x48.png"
+                    sizes="48x48"
+                    key="favicon-48x48"
+                />
+                <link
+                    rel="icon"
+                    href="/images/favicon-96x96.png"
+                    sizes="96x96"
+                    key="favicon-96x96"
+                />
+                <link
+                    rel="icon"
+                    href="/images/favicon-144x144.png"
+                    sizes="144x144"
+                    key="favicon-144x144"
+                />
+
+                <meta
+                    name="google-site-verification"
+                    content="4cQQ95yeqzUWnoWNvYC0hfDr39TwAMCkiE_H43OBXaA"
+                />
+                <meta
+                    name="description"
+                    content="Diecézny misijný medzinárodný seminár Redemptoris Mater v Žiline."
+                />
+                <meta
+                    name="keywords"
+                    content="Redemptoris Mater, Žilina, Seminár, Slovensko,
+                        sk, Diecézny misijný seminár, neokatechumenátna cesta, Slovakia"
+                />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1.0"
+                />
+                <script
+                    key="gtag-script"
+                    async
+                    src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+                />
+                <script
+                    key="gtag-script-2"
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', '${GA_TRACKING_ID}', {
+                        page_path: window.location.pathname,
+                        });
+                    `,
+                    }}
+                />
+            </Head>
             <Drawer
                 modal
                 open={open}
@@ -86,3 +155,5 @@ export default ({ children }) => {
         </div>
     );
 };
+
+export default Layout;

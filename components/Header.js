@@ -1,7 +1,7 @@
 import Menu from "./Menu";
 import { PRIMARY_FONT } from "../constants";
 
-export default ({ title, handleDrawer, handleDrawerClose }) => (
+const Header = ({ handleDrawer, handleDrawerClose }) => (
     <div className="wrapper">
         <a href="/" className="logo">
             <img src="/images/logo.svg" alt="Logo" />
@@ -73,3 +73,5 @@ export default ({ title, handleDrawer, handleDrawerClose }) => (
         `}</style>
     </div>
 );
+
+export default Header;

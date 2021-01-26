@@ -241,23 +241,25 @@ const Articles = ({ articles: { count, ...articles }, skip }) => {
     );
 };
 
-Articles.getInitialProps = async () => {
+export async function getStaticProps() {
     return {
-        skip: INITIAL_COUNT_FETCHED,
-        articles: await sanity.fetch(`{
-            'count': count(*[_type == "article"]),
-            'gal': *[_type == "article" && defined(gallery)]{gallery[1]{asset->{url}}},
-            'items': *[_type == "article"]{
-                title,
-                slug,
-                publishedAt,
-                body,
-                mainImage,
-                bodyPreview,
-                gallery[1]{asset->{url}}
-              } | order(publishedAt desc) [0..${INITIAL_COUNT_FETCHED - 1}]
-        }`),
+        props: {
+            skip: INITIAL_COUNT_FETCHED,
+            articles: await sanity.fetch(`{
+                'count': count(*[_type == "article"]),
+                'gal': *[_type == "article" && defined(gallery)]{gallery[1]{asset->{url}}},
+                'items': *[_type == "article"]{
+                    title,
+                    slug,
+                    publishedAt,
+                    body,
+                    mainImage,
+                    bodyPreview,
+                    gallery[1]{asset->{url}}
+                } | order(publishedAt desc) [0..${INITIAL_COUNT_FETCHED - 1}]
+            }`),
+        },
     };
-};
+}
 
 export default Articles;

@@ -23,7 +23,9 @@ const ShortArticle = ({ publishedAt, title, bodyPreview, slug }) => {
             <span className="short-article-date">{dateTime}</span>
             <h2 className="short-article-title">{title}</h2>
             <p className="short-article-text">{bodyPreview}</p>
-            <NavLink href="/articles/[slug]"  as={`/articles/${slug.current}`}>Čítať viac</NavLink>
+            <NavLink href="/articles/[slug]" as={`/articles/${slug.current}`}>
+                Čítať viac
+            </NavLink>
             <style jsx>{`
                 .short-article {
                     flex: 1;
@@ -64,15 +66,19 @@ const ShortArticle = ({ publishedAt, title, bodyPreview, slug }) => {
     );
 };
 
-export const Donation = ({file}) => (
+export const Donation = ({ file }) => (
     <div className="donation">
         <Content>
             <div className="donation-square">
                 <h1 className="heading">Podporiť nás môžete</h1>
                 <br />
                 <p>Poukázaním 2% z dane. Každý rok, začiatkom roka</p>
-                <a className={`${file && 'enabled'} download-button`}
-                    href={file ? `${file}?dl=` : '#'}>Stiahnuť formulár</a>
+                <a
+                    className={`${file && "enabled"} download-button`}
+                    href={file ? `${file}?dl=` : "#"}
+                >
+                    Stiahnuť formulár
+                </a>
                 <br />
                 <p>Alebo platbou na účet</p>
                 <span className="iban">{IBAN}</span>
@@ -176,9 +182,10 @@ const Index = ({ items: { article, mainArticle, donationForm } }) => (
     </Layout>
 );
 
-Index.getInitialProps = async () => {
+export async function getStaticProps() {
     return {
-        items: await sanity.fetch(`{
+        props: {
+            items: await sanity.fetch(`{
             'mainArticle': *[_type == "mainArticle"][0],
             'donationForm': *[_type == 'settings'][0] {
                 "url": donationForm.asset->url
@@ -192,7 +199,9 @@ Index.getInitialProps = async () => {
                 bodyPreview,
             } | order(publishedAt desc) [0..2]
         }`),
+        },
+        revalidate: 1,
     };
-};
+}
 
 export default Index;
