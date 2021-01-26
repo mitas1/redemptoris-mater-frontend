@@ -1,8 +1,6 @@
-require('dotenv').config();
-
 module.exports = {
     env: {
-        SANITY_PROJECT_ID: process.env.SANITY_PROJECT_ID,
-        SANITY_DATASET: process.env.SANITY_DATASET
-    }
+        SANITY_PROJECT_ID: "7stfb41s",
+        SANITY_DATASET: "production",
+    },
 };

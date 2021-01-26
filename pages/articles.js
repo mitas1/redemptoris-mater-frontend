@@ -12,8 +12,8 @@ import Heading from "../components/Heading";
 import { PRIMARY_FONT, DATETIME_MASK, PAGE_TITLE } from "../constants";
 import { NavLink } from "../components/Navigation";
 
-const INITIAL_COUNT_FETCHED = 5;
-const ARTICLES_PER_PAGE = 5;
+const INITIAL_COUNT_FETCHED = 10;
+const ARTICLES_PER_PAGE = 10;
 
 const Button = ({ title, ...rest }) => {
     return (
@@ -21,6 +21,7 @@ const Button = ({ title, ...rest }) => {
             <div>{title}</div>
             <style jsx>{`
                 width: auto;
+                cursor: pointer;
                 float: left;
                 padding: 8px 16px;
                 border-radius: 3px;
@@ -42,7 +43,10 @@ const ShortArticle = ({ date, title, bodyPreview, mainImage, slug }) => {
         <div className="short-article-wrapper">
             <div className="image">
                 {mainImage && (
-                    <Link href="/articles/[slug]" as={`/articles/${slug.current}`}>
+                    <Link
+                        href="/articles/[slug]"
+                        as={`/articles/${slug.current}`}
+                    >
                         <a>
                             <img
                                 src={urlFor(mainImage)
@@ -60,7 +64,10 @@ const ShortArticle = ({ date, title, bodyPreview, mainImage, slug }) => {
                 <h2 className="short-article-title">{title}</h2>
                 {mainImage && (
                     <div className="image-smartphone">
-                        <Link href="/articles/[slug]" as={`/articles/${slug.current}`}>
+                        <Link
+                            href="/articles/[slug]"
+                            as={`/articles/${slug.current}`}
+                        >
                             <a>
                                 <img
                                     src={urlFor(mainImage)
@@ -74,7 +81,12 @@ const ShortArticle = ({ date, title, bodyPreview, mainImage, slug }) => {
                     </div>
                 )}
                 <p className="short-article-text">{bodyPreview}</p>
-                <NavLink href="/articles/[slug]" as={`/articles/${slug.current}`} >Čítať viac</NavLink>
+                <NavLink
+                    href="/articles/[slug]"
+                    as={`/articles/${slug.current}`}
+                >
+                    Čítať viac
+                </NavLink>
             </article>
             <style jsx>{`
                 .image {
@@ -172,9 +184,9 @@ const Articles = ({ articles: { count, ...articles }, skip }) => {
                 bodyPreview,
                 gallery[1]{asset->{url}}
               } | order(publishedAt desc) [${from}..${to}]
-        }`,
+        }`
             )
-            .then(result => {
+            .then((result) => {
                 setCursor(cursor + 1);
                 setItems([...items, ...result.items]);
                 setLoading(false);
@@ -205,13 +217,11 @@ const Articles = ({ articles: { count, ...articles }, skip }) => {
                             title={item.title}
                         ></ShortArticle>
                     ))}
-                {loading && (
-                    <div className="loading">
-                        <p>Loading ...</p>
-                    </div>
-                )}
                 {count > cursor * ARTICLES_PER_PAGE && (
-                    <Button title="Staršie články" onClick={loadMore} />
+                    <Button
+                        title={loading ? "Načítavam..." : "Staršie články"}
+                        onClick={loadMore}
+                    />
                 )}
             </ListWrapper>
             <style jsx>{`

@@ -1,105 +1,116 @@
 {
-    "build": {
-        "env": {
-            "SANITY_PROJECT_ID": "7stfb41s",
-            "SANITY_DATASET": "production"
+    "routes": [
+        {
+            "src": "/articles/8205d632-3fc9-481b-bc8e-c064499104c5",
+            "status": 301,
+            "headers": {
+                "Location": "/articles/turzovka-hora-zivcakova"
+            }
+        },
+        {
+            "src": "/articles/21885bc0-4be5-40b1-be68-5745525af7ff",
+            "status": 301,
+            "headers": {
+                "Location": "/articles/diakonska-vysviacka-lovra-volfa"
+            }
+        },
+        {
+            "src": "/articles/a7db0c5d-4d21-44ee-a9d4-21d775e328a6",
+            "status": 301,
+            "headers": {
+                "Location": "/articles/pozehnane-vianoce-2019"
+            }
+        },
+        {
+            "src": "/articles/b693437f-f16e-43c5-af0e-e151737b4a15",
+            "status": 301,
+            "headers": {
+                "Location": "/articles/predstavovanie-nasho-seminara-v-farnosti-zilina-hajik"
+            }
+        },
+        {
+            "src": "/articles/d843f558-88b7-45bb-a0c1-88cb7c760389",
+            "status": 301,
+            "headers": {
+                "Location": "/articles/seminarna-put-po-topach-carmen-spanielsko"
+            }
+        },
+        {
+            "src": "/articles/ddeecb0c-a2db-4b6b-abb6-e7b7a3d7c5d2",
+            "status": 301,
+            "headers": {
+                "Location": "/articles/dvadsiate-vyrocie-biskupskej-vysviacky-mons-tomasa-galisa"
+            }
+        },
+        {
+            "src": "/articles/031be768-bd5a-421e-9c28-e99d879f07c4",
+            "status": 301,
+            "headers": {
+                "Location": "/articles/mala-fatra"
+            }
+        },
+        {
+            "src": "/articles/28c8cbfc-e39d-4a24-9772-d40845601c01",
+            "status": 301,
+            "headers": {
+                "Location": "/articles/medzidiecezne-stretnutie-seminaristov-salzburg-2019"
+            }
+        },
+        {
+            "src": "/articles/5672979f-a892-46da-b798-6c6d79a5535d",
+            "status": 301,
+            "headers": {
+                "Location": "/articles/stretnutie-s-papezom"
+            }
+        },
+        {
+            "src": "/articles/4de6422e-f016-4164-97ba-be776dee3017",
+            "status": 301,
+            "headers": {
+                "Location": "/articles/diakonska-vysviacka-petra-botha"
+            }
+        },
+        {
+            "src": "/index.php",
+            "status": 301,
+            "headers": {
+                "Location": "/"
+            }
+        },
+        {
+            "src": "/articles/b12c07a0-af0f-4465-a5a4-90c11d1c2fdc",
+            "status": 301,
+            "headers": {
+                "Location": "/articles/krizova-cesta-maria-ellend"
+            }
+        },
+        {
+            "src": "/articles/70814c91-e856-48b9-938f-7836b06cc823",
+            "status": 301,
+            "headers": {
+                "Location": "/articles/pascha-2020"
+            }
+        },
+        {
+            "src": "/articles/3f1da8ca-3a0d-4d80-9cfa-d3b644b5b480",
+            "status": 301,
+            "headers": {
+                "Location": "/articles/rekolekcie-v-ziline"
+            }
+        },
+        {
+            "src": "/articles/1e6c2a4f-4b41-45c2-b014-e6e08b1d6e23",
+            "status": 301,
+            "headers": {
+                "Location": "/articles/porto-san-giorgio-6-9-9-9"
+            }
+        },
+        {
+            "src": "/articles/main-article",
+            "status": 301,
+            "headers": {
+                "Location": "/articles/misia-seminarov-redemptoris-mater"
+            }
         }
-    },
-    "routes": [{
-        "src": "/articles/8205d632-3fc9-481b-bc8e-c064499104c5",
-        "status": 301,
-        "headers": {
-            "Location": "/articles/turzovka-hora-zivcakova"
-        }
-    }, {
-        "src": "/articles/21885bc0-4be5-40b1-be68-5745525af7ff",
-        "status": 301,
-        "headers": {
-            "Location": "/articles/diakonska-vysviacka-lovra-volfa"
-        }
-    }, {
-        "src": "/articles/a7db0c5d-4d21-44ee-a9d4-21d775e328a6",
-        "status": 301,
-        "headers": {
-            "Location": "/articles/pozehnane-vianoce-2019"
-        }
-    }, {
-        "src": "/articles/b693437f-f16e-43c5-af0e-e151737b4a15",
-        "status": 301,
-        "headers": {
-            "Location": "/articles/predstavovanie-nasho-seminara-v-farnosti-zilina-hajik"
-        }
-    }, {
-        "src": "/articles/d843f558-88b7-45bb-a0c1-88cb7c760389",
-        "status": 301,
-        "headers": {
-            "Location": "/articles/seminarna-put-po-topach-carmen-spanielsko"
-        }
-    }, {
-        "src": "/articles/ddeecb0c-a2db-4b6b-abb6-e7b7a3d7c5d2",
-        "status": 301,
-        "headers": {
-            "Location": "/articles/dvadsiate-vyrocie-biskupskej-vysviacky-mons-tomasa-galisa"
-        }
-    }, {
-        "src": "/articles/031be768-bd5a-421e-9c28-e99d879f07c4",
-        "status": 301,
-        "headers": {
-            "Location": "/articles/mala-fatra"
-        }
-    }, {
-        "src": "/articles/28c8cbfc-e39d-4a24-9772-d40845601c01",
-        "status": 301,
-        "headers": {
-            "Location": "/articles/medzidiecezne-stretnutie-seminaristov-salzburg-2019"
-        }
-    }, {
-        "src": "/articles/5672979f-a892-46da-b798-6c6d79a5535d",
-        "status": 301,
-        "headers": {
-            "Location": "/articles/stretnutie-s-papezom"
-        }
-    }, {
-        "src": "/articles/4de6422e-f016-4164-97ba-be776dee3017",
-        "status": 301,
-        "headers": {
-            "Location": "/articles/diakonska-vysviacka-petra-botha"
-        }
-    }, {
-        "src": "/index.php",
-        "status": 301,
-        "headers": {
-            "Location": "/"
-        }
-    }, {
-        "src": "/articles/b12c07a0-af0f-4465-a5a4-90c11d1c2fdc",
-        "status": 301,
-        "headers": {
-            "Location": "/articles/krizova-cesta-maria-ellend"
-        }
-    }, {
-        "src": "/articles/70814c91-e856-48b9-938f-7836b06cc823",
-        "status": 301,
-        "headers": {
-            "Location": "/articles/pascha-2020"
-        }
-    }, {
-        "src": "/articles/3f1da8ca-3a0d-4d80-9cfa-d3b644b5b480",
-        "status": 301,
-        "headers": {
-            "Location": "/articles/rekolekcie-v-ziline"
-        }
-    }, {
-        "src": "/articles/1e6c2a4f-4b41-45c2-b014-e6e08b1d6e23",
-        "status": 301,
-        "headers": {
-            "Location": "/articles/porto-san-giorgio-6-9-9-9"
-        }
-    }, {
-        "src": "/articles/main-article",
-        "status": 301,
-        "headers": {
-            "Location": "/articles/misia-seminarov-redemptoris-mater"
-        }
-    }]
+    ]
 }

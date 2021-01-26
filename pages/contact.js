@@ -5,8 +5,13 @@ import Layout from "../components/Layout";
 import Heading, { SubHeading } from "../components/Heading";
 import Content from "../components/Content";
 import { Wrapper } from "../components/Article";
-import { IBAN, CONTACT_PERSON, CONTACT_NUMBER, CONTACT_EMAIL } from "../constants/contact";
-import { Column1, Column2, Column3 } from "../components/Footer";
+import {
+    IBAN,
+    CONTACT_PERSON,
+    CONTACT_NUMBER,
+    CONTACT_EMAIL,
+} from "../constants/contact";
+import { Column1, Column11, Column2, Column3 } from "../components/Footer";
 import { PAGE_TITLE } from "../constants";
 
 const CircleIcon = ({ src }) => (
@@ -31,7 +36,10 @@ const Contact = () => (
     <Layout>
         <Head>
             <title>{`Kontakt | ${PAGE_TITLE}`}</title>
-            <meta name="description" content={`Rektor seminára ${CONTACT_PERSON}, Tel.:${CONTACT_NUMBER}, Email: ${CONTACT_EMAIL}, IBAN: ${IBAN}, Adresa: Mokrohájska cesta 6 841 04 Bratislava`} />
+            <meta
+                name="description"
+                content={`Rektor seminára ${CONTACT_PERSON}, Tel.:${CONTACT_NUMBER}, Email: ${CONTACT_EMAIL}, IBAN: ${IBAN}, Adresa: Mokrohájska cesta 6 841 04 Bratislava`}
+            />
         </Head>
         <Content>
             <Wrapper>
@@ -42,24 +50,24 @@ const Contact = () => (
                     <CircleIcon src="/images/tel.svg" />
                     <div className="column-content">
                         <SubHeading title="Kontakt" level={4} />
-                        <Column1/>
+                        <Column1 />
                         <p className="paragraph"></p>
                         <SubHeading title="Číslo účtu" level={4} />
-                        <p>{IBAN}</p>
+                        <Column11 />
                     </div>
                 </div>
                 <div className="column">
                     <CircleIcon src="/images/home.svg" />
                     <div className="column-content">
                         <SubHeading title="Sídlo" level={4} />
-                        <Column2/>
+                        <Column2 />
                     </div>
                 </div>
                 <div className="column">
                     <CircleIcon src="/images/location.svg" />
                     <div className="column-content">
                         <SubHeading title="Kde nás teraz nájdete" level={4} />
-                        <Column3/>
+                        <Column3 />
                     </div>
                 </div>
             </div>
