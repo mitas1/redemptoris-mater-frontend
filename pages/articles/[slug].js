@@ -1,6 +1,7 @@
 import React from "react";
-import ErrorPage from "next/error";
 import Head from "next/head";
+import Image from "next/image";
+import { useRouter } from "next/router";
 import BlockContent from "@sanity/block-content-to-react";
 import moment from "moment";
 
@@ -13,7 +14,8 @@ import Layout from "../../components/Layout";
 import Content from "../../components/Content";
 import Heading from "../../components/Heading";
 import { PRIMARY_FONT, DATETIME_MASK, PAGE_TITLE } from "../../constants";
-import Image from "next/image";
+
+import Spinner from "../../components/Spinner";
 
 export const ArticleContent = ({ children, negativeMargin }) => (
     <div className={negativeMargin ? "negative content" : "content"}>
@@ -105,8 +107,24 @@ const RichText = ({ content }) =>
     );
 
 const Article = ({ article, error }) => {
-    if (error) {
-        return <ErrorPage statusCode={error} />;
+    const router = useRouter();
+
+    if (router.isFallback) {
+        return (
+            <Layout>
+                <div className="wrapper">
+                    <Spinner />
+                    <style jsx>{`
+                        .wrapper {
+                            display: flex;
+                            align-items: center;
+                            height: calc(100vh - 60px);
+                            box-sizing: border-box;
+                        }
+                    `}</style>
+                </div>
+            </Layout>
+        );
     }
 
     const dateTime = moment(article.publishedAt).format(DATETIME_MASK);
@@ -204,7 +222,7 @@ export async function getStaticProps({ params: { slug } }) {
             gallery[]{asset->{url}}}[0]`
     );
 
-    if (article == null) {
+    if (!article) {
         return {
             notFound: true,
         };
