@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import sanity from "../lib/sanity";
 import moment from "moment";
 
@@ -68,6 +69,7 @@ const ShortArticle = ({ publishedAt, title, bodyPreview, slug }) => {
 
 export const Donation = ({ file }) => (
     <div className="donation">
+        <Image src="/images/icon2.jpg" layout="fill" objectFit="cover" />
         <Content>
             <div className="donation-square">
                 <h1 className="heading">Podporiť nás môžete</h1>
@@ -86,9 +88,8 @@ export const Donation = ({ file }) => (
         </Content>
         <style jsx>{`
             .donation {
+                position: relative;
                 width: 100%;
-                background-image: url("/images/icon2.jpg");
-                background-size: cover;
                 padding: 100px 24px;
                 box-sizing: border-box;
             }

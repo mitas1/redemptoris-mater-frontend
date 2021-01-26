@@ -13,6 +13,7 @@ import Layout from "../../components/Layout";
 import Content from "../../components/Content";
 import Heading from "../../components/Heading";
 import { PRIMARY_FONT, DATETIME_MASK, PAGE_TITLE } from "../../constants";
+import Image from "next/image";
 
 export const ArticleContent = ({ children, negativeMargin }) => (
     <div className={negativeMargin ? "negative content" : "content"}>
@@ -130,14 +131,16 @@ const Article = ({ article, error }) => {
                     </span>
                 </Wrapper>
                 {article.mainImage && (
-                    <img
-                        src={urlFor(article.mainImage)
-                            .size(900, 450)
-                            .quality(100)
-                            .url()}
-                        alt="Hlavný obrázok"
-                        className="image"
-                    />
+                    <div className="image">
+                        <Image
+                            src={urlFor(article.mainImage)
+                                .size(900, 450)
+                                .quality(100)
+                                .url()}
+                            width={900}
+                            height={450}
+                        />
+                    </div>
                 )}
                 <ArticleContent negativeMargin={article.mainImage}>
                     <RichText content={article.body} />

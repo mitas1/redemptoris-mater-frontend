@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import Lightbox from "react-image-lightbox";
 
@@ -32,12 +33,13 @@ const Gallery = ({ images }) => {
                     onClick={handleClick.bind(this, i)}
                     key={i}
                 >
-                    <img
+                    <Image
                         src={urlFor(image)
                             .size(...SIZES[i])
                             .quality(100)
                             .url()}
-                        alt="Náhľad"
+                        width={SIZES[i][0]}
+                        height={SIZES[i][1]}
                     />
                 </a>
             ))}
@@ -47,9 +49,10 @@ const Gallery = ({ images }) => {
                     onClick={handleClick.bind(this, i)}
                     key={i}
                 >
-                    <img
+                    <Image
                         src={urlFor(image).size(400, 300).quality(100).url()}
-                        alt="Zmenšený náhľad"
+                        layout="fill"
+                        objectFit="contain"
                     />
                 </a>
             ))}
@@ -82,6 +85,8 @@ const Gallery = ({ images }) => {
                 }
                 .thumbnail.smartphone {
                     display: none;
+                    height: 300px;
+                    width: 100%;
                 }
                 .thumbnail:hover {
                     opacity: 0.9;
@@ -99,6 +104,7 @@ const Gallery = ({ images }) => {
                     }
                     .thumbnail.smartphone {
                         width: 100%;
+                        position: relative;
                         display: block;
                         margin: 0 0 8px 0;
                     }
