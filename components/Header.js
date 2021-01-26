@@ -52,6 +52,14 @@ const Header = ({ handleDrawer, handleDrawerClose }) => (
                 display: none;
             }
             @media screen and (max-width: 992px) {
+                .title {
+                    font-size: 12px;
+                    margin: 0 8px;
+                }
+                .logo {
+                    padding: 12px 0;
+                }
+
                 .smartphone-menu {
                     display: flex;
                     width: 48px;
