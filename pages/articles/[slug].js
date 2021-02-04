@@ -230,6 +230,7 @@ export async function getStaticProps({ params: { slug } }) {
 
     return {
         props: { article },
+        revalidate: 1,
     };
 }
 

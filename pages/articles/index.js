@@ -1,16 +1,16 @@
 import React from "react";
-import sanity from "../lib/sanity";
+import sanity from "../../lib/sanity";
 
 import Link from "next/link";
 import Head from "next/head";
 
 import moment from "moment";
-import { urlFor } from "../utils/sanity";
-import { ListWrapper } from "../components/Article";
-import Layout from "../components/Layout";
-import Heading from "../components/Heading";
-import { PRIMARY_FONT, DATETIME_MASK, PAGE_TITLE } from "../constants";
-import { NavLink } from "../components/Navigation";
+import { urlFor } from "../../utils/sanity";
+import { ListWrapper } from "../../components/Article";
+import Layout from "../../components/Layout";
+import Heading from "../../components/Heading";
+import { PRIMARY_FONT, DATETIME_MASK, PAGE_TITLE } from "../../constants";
+import { NavLink } from "../../components/Navigation";
 
 const INITIAL_COUNT_FETCHED = 10;
 const ARTICLES_PER_PAGE = 10;
@@ -259,6 +259,7 @@ export async function getStaticProps() {
                 } | order(publishedAt desc) [0..${INITIAL_COUNT_FETCHED - 1}]
             }`),
         },
+        revalidate: 1,
     };
 }
 

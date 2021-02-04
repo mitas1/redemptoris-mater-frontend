@@ -29,6 +29,7 @@ export async function getStaticProps() {
         *[_type == 'settings'][0] {
             "url": donationForm.asset->url
         }`),
+        revalidate: 5,
     };
 }
 
