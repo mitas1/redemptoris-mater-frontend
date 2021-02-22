@@ -48,16 +48,16 @@ export const Column11 = ({ show }) => (
 
 export const Column2 = () => (
     <Column>
-        Mokrohájska cesta 6<br />
-        841 04 Bratislava
+        Mariánske námestie 23
+        <br />
+        010 01 Žilina
     </Column>
 );
 
 export const Column3 = () => (
     <Column>
-        Mariánske námestie 23
-        <br />
-        010 01 Žilina
+        Mokrohájska cesta 6<br />
+        841 04 Bratislava
     </Column>
 );
 
