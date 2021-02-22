@@ -30,6 +30,7 @@ const ShortArticle = ({ publishedAt, title, bodyPreview, slug }) => {
             <style jsx>{`
                 .short-article {
                     flex: 1;
+                    padding: 0 24px 0 0;
                     margin: 0 48px 0 0;
                     border-right: 1px dotted #979797;
                 }
