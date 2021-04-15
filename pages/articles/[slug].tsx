@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 
 import BlockContent from '@sanity/block-content-to-react';
 
+import Button from '../../components/Button';
 import Content from '../../components/Content';
 import Gallery from '../../components/Gallery';
 import Heading from '../../components/Heading';
@@ -168,6 +169,15 @@ const Article = ({ article, error }) => {
         <ArticleContent negativeMargin={article.mainImage}>
           <RichText content={article.body} />
         </ArticleContent>
+        <ArticleContent>
+          {article.file && article.file.url && (
+            <div className="dl-button">
+              <Button href={`${article.file.url}?dl=`}>
+                Stiahnuť PDF prílohu
+              </Button>
+            </div>
+          )}
+        </ArticleContent>
         {article.gallery && (
           <div className="gallery-wrapper">
             <Gallery images={article.gallery} />
@@ -181,6 +191,11 @@ const Article = ({ article, error }) => {
         </ArticleContent>
       </Content>
       <style jsx>{`
+        .dl-button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
         .gallery-wrapper {
           margin: 48px auto;
         }
@@ -222,6 +237,10 @@ export async function getStaticProps({ params: { slug } }) {
             mainImage,
             publishedAt,
             author->{name},
+            'file': {
+                'url': file.asset->url,
+                'name': file.name,
+            },
             gallery[]{asset->{url}}}[0]`
   )
 
