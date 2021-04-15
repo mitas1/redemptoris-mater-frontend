@@ -1,3 +1,5 @@
+import { FC } from 'react';
+
 import Link from 'next/link';
 import css from 'styled-jsx/css';
 
@@ -10,6 +12,7 @@ const styles = css`
     font-size: 15px;
     font-weight: 500;
     padding: 24px 45px;
+    margin: 0 auto;
     text-decoration: none;
   }
   .icon {
@@ -26,7 +29,14 @@ const styles = css`
   }
 `
 
-const Button = ({
+interface Button {
+  className?: string
+  href: string
+  icon?: string
+  secondary?: boolean
+}
+
+const Button: FC<Button> = ({
   children,
   className,
   href,
