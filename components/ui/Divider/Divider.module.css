@@ -1,0 +1,23 @@
+.vertical {
+  @apply flex flex-col gap-10;
+
+  & > * {
+    @apply grow pt-10;
+
+    &:first-child {
+      @apply p-0;
+    }
+  }
+}
+
+.horizontal {
+  @apply flex flex-col divide-y sm:divide-y-0 sm:flex-row sm:divide-x gap-10 divide-gray-100;
+
+  & > * {
+    @apply grow pt-10 sm:pt-0 sm:basis-0 sm:pl-10;
+
+    &:first-child {
+      @apply p-0;
+    }
+  }
+}

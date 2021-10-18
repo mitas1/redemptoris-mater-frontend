@@ -1,0 +1,10 @@
+.root {
+  @apply text-sm text-gray-600 uppercase hover:underline;
+
+  &.active {
+    @apply text-black;
+  }
+  &.button {
+    @apply bg-blue-500 text-white p-4 rounded hover:bg-opacity-90 hover:no-underline;
+  }
+}

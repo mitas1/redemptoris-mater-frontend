@@ -1,12 +1,11 @@
-import '@material/react-drawer/dist/drawer.css';
-import 'react-image-lightbox/style.css';
+import "@material/react-drawer/dist/drawer.css";
+import "react-image-lightbox/style.css";
+import "../styles/globals.css";
 
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
-import { useRouter } from 'next/router';
-import NProgress from 'nprogress';
-
-import { pageview } from '../lib/gtag';
+import { useRouter } from "next/router";
+import NProgress from "nprogress";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
@@ -18,7 +17,6 @@ function MyApp({ Component, pageProps }) {
 
     const handleRouteChangeComplete = (url) => {
       NProgress.done()
-      pageview(url)
     }
 
     const handleRouteChangeError = () => NProgress.done()

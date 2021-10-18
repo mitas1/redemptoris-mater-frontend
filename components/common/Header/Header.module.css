@@ -1,0 +1,13 @@
+.wrapper {
+  @apply fixed;
+  @apply top-0;
+  @apply w-full;
+  @apply bg-white;
+  @apply flex;
+  @apply px-2;
+  @apply sm:px-14;
+  @apply py-3;
+  @apply justify-between;
+  @apply items-center;
+  @apply z-10;
+}

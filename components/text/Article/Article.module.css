@@ -1,0 +1,5 @@
+.article {
+  & > *:first-child {
+    @apply mt-0;
+  }
+}

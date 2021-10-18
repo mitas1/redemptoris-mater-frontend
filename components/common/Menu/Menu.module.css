@@ -1,0 +1,3 @@
+.menuLink {
+  @apply flex items-center mx-5 text-xs;
+}

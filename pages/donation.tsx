@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { FC } from "react";
 
-import Head from 'next/head';
+import Head from "next/head";
 
-import Layout from '../components/Layout';
-import { PAGE_TITLE } from '../constants';
-import { IBAN } from '../constants/contact';
-import sanity from '../lib/sanity';
-import { Donation as CDonation } from './index';
+import {
+  DonationFormHeroBanner,
+  Layout,
+} from "@components/common";
+import { createSanityApi } from "@lib/sanity/api";
+import type { DonationForm as TDonationForm } from "@lib/sanity/types";
 
-const Donation = ({ url }) => {
+import { PAGE_TITLE } from "../constants";
+import { IBAN } from "../constants/contact";
+
+interface DonationFormProps {
+  donationForm: TDonationForm;
+}
+
+const Donation: FC<DonationFormProps> = ({ donationForm }) => {
   return (
     <Layout>
       <Head>
@@ -19,19 +27,19 @@ const Donation = ({ url }) => {
           content={`Podporiť nás môžete poukázaním 2% z dane, každý rok, začiatkom roka, alebo platbou na účet: ${IBAN}`}
         />
       </Head>
-      <CDonation file={url} />
+      <DonationFormHeroBanner file={donationForm.url} />
     </Layout>
-  )
-}
+  );
+};
 
 export async function getStaticProps() {
+  const sanityApi = createSanityApi();
+  const donationForm = await sanityApi.getDonationForm();
+
   return {
-    props: await sanity.fetch(`
-        *[_type == 'settings'][0] {
-            "url": donationForm.asset->url
-        }`),
+    donationForm,
     revalidate: 5,
-  }
+  };
 }
 
-export default Donation
+export default Donation;

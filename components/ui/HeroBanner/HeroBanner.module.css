@@ -1,0 +1,11 @@
+.root {
+  @apply relative overflow-hidden h-[600px];
+}
+
+.centerBoxRoot {
+  @apply absolute inset-0 h-full;
+}
+
+.centerBox {
+  @apply h-full flex items-center;
+}

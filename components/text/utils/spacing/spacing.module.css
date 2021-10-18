@@ -1,0 +1,7 @@
+.normal {
+  @apply mb-4;
+}
+
+.headline {
+  @apply mb-4 mt-6;
+}

@@ -1,0 +1,3 @@
+.blockquote {
+  @apply mb-4 leading-loose italic;
+}

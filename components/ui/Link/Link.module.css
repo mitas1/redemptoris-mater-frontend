@@ -1,0 +1,11 @@
+.root {
+  @apply inline-flex;
+
+  &.link {
+    @apply items-center text-blue-500 hover:underline;
+  }
+
+  &.button {
+    @apply bg-blue-500 text-white px-8 py-4 rounded;
+  }
+}

@@ -2,6 +2,7 @@
 
 This repository is frontend written in [Next.js](https://nextjs.org/) for
 the [www.redemptorismater.sk](https://redemptorismater.sk) website.
+
 ## Development
 
 To install the dependencies, type the following:

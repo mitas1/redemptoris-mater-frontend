@@ -1,0 +1,19 @@
+.headline {
+  @apply font-serif;
+
+  &:global(.headline-1) {
+    @apply text-5xl;
+  }
+
+  &:global(.headline-2) {
+    @apply text-3xl;
+  }
+
+  &:global(.headline-3) {
+    @apply text-2xl;
+  }
+
+  &:global(.headline-4) {
+    @apply text-lg;
+  }
+}

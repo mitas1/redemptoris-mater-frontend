@@ -1,0 +1,29 @@
+.article {
+  & .title {
+    @apply mb-4 hover:underline;
+  }
+
+  & .paragraph {
+    @apply mb-2;
+  }
+
+  & .dot {
+    @apply px-2;
+  }
+
+  & .imageTile {
+    @apply relative flex w-[100px] h-[100px] sm:w-[250px] sm:h-[150px] flex-shrink-0;
+  }
+
+  & .readMore {
+    @apply mt-6;
+  }
+
+  &.imageLayout {
+    @apply flex flex-row-reverse justify-between sm:justify-start sm:flex-row sm:space-x-8;
+
+    & .title {
+      @apply mb-2;
+    }
+  }
+}
