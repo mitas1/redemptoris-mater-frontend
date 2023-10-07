@@ -61,8 +61,8 @@ export const Column2 = () => (
 
 export const Column3 = () => (
   <Column>
-    Mokrohájska cesta 6<br />
-    841 04 Bratislava
+    Súľovská 11<br />
+    949 01 Nitra
   </Column>
 )
 
