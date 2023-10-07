@@ -12,6 +12,7 @@ import { GA_TRACKING_ID } from '../lib/gtag';
 import Footer from './Footer';
 import Header from './Header';
 import Menu from './Menu';
+import Script from 'next/script';
 
 const Layout = ({ children }) => {
   const [open, setOpen] = React.useState(false)
@@ -21,10 +22,6 @@ const Layout = ({ children }) => {
       <Head>
         <meta charSet="UTF-8" />
         <title>{PAGE_TITLE}</title>
-        <link
-          href="https://fonts.googleapis.com/css?family=Martel:600,700,900&display=swap"
-          rel="stylesheet"
-        />
         <link
           rel="shortcut icon"
           href="/images/favicon.ico"
@@ -63,22 +60,22 @@ const Layout = ({ children }) => {
                         sk, Diecézny misijný seminár, neokatechumenátna cesta, Slovakia"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script
+        <Script
           key="gtag-script"
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
         />
-        <script
+        <Script
           key="gtag-script-2"
           dangerouslySetInnerHTML={{
             __html: `
-                        window.dataLayer = window.dataLayer || [];
-                        function gtag(){dataLayer.push(arguments);}
-                        gtag('js', new Date());
-                        gtag('config', '${GA_TRACKING_ID}', {
-                        page_path: window.location.pathname,
-                        });
-                    `,
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+              });
+          `,
           }}
         />
       </Head>
