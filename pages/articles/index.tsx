@@ -48,12 +48,10 @@ const ShortArticle = ({ date, title, bodyPreview, mainImage, slug }) => {
       <div className="image">
         {mainImage && (
           <Link href="/articles/[slug]" as={`/articles/${slug.current}`}>
-            <a>
               <img
                 src={urlFor(mainImage).size(300, 200).quality(100).url()}
                 alt="Obrázok článku"
               />
-            </a>
           </Link>
         )}
       </div>
@@ -63,12 +61,10 @@ const ShortArticle = ({ date, title, bodyPreview, mainImage, slug }) => {
         {mainImage && (
           <div className="image-smartphone">
             <Link href="/articles/[slug]" as={`/articles/${slug.current}`}>
-              <a>
                 <img
                   src={urlFor(mainImage).size(400, 180).quality(100).url()}
                   alt="Obrázok článku"
                 />
-              </a>
             </Link>
           </div>
         )}

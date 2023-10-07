@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import { FC, PropsWithChildren } from 'react';
 
 import Link from 'next/link';
 
-export interface NavLinkProps {
+export interface NavLinkProps extends PropsWithChildren {
   href: string
   as: string
   back?: boolean
@@ -10,12 +10,10 @@ export interface NavLinkProps {
 
 export const NavLink: FC<NavLinkProps> = ({
   href,
-  as,
   children,
   back = false,
 }) => (
-  <Link href={href} as={as}>
-    <a className="link">
+  <Link href={href} className="link">
       {back && <img height={8} src="/images/arrow_back.svg" alt="Šípka späť" />}
       {children}
       {!back && (
@@ -33,6 +31,5 @@ export const NavLink: FC<NavLinkProps> = ({
           margin: 0 18px;
         }
       `}</style>
-    </a>
   </Link>
 )

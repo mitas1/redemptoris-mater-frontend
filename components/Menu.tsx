@@ -44,13 +44,9 @@ const Menu = ({ smartphone, closeDrawer }: Props) => {
   return (
     <div className={`${smartphone && "smartphone"} menu`}>
       {MENU_ITEMS.map((item, index) => (
-        <Link key={index} href={item.href}>
-          <a
-            tabIndex={0}
-            className={pathname === item.href ? "item active" : "item"}
-          >
+        <Link key={index} href={item.href} tabIndex={0}
+          className={pathname === item.href ? "item active" : "item"}>
             {item.label}
-          </a>
         </Link>
       ))}
       {isIndexPage ? (
@@ -58,8 +54,8 @@ const Menu = ({ smartphone, closeDrawer }: Props) => {
           Chcem podporiť
         </a>
       ) : (
-        <Link href="/donation">
-          <a className="item-accent">Chcem podporiť</a>
+        <Link href="/donation" className="item-accent">
+          Chcem podporiť
         </Link>
       )}
       <style jsx>{`
