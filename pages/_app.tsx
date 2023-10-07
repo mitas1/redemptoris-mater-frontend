@@ -6,8 +6,6 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import NProgress from 'nprogress';
 
-import { pageview } from '../lib/gtag';
-
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
 
@@ -16,9 +14,8 @@ function MyApp({ Component, pageProps }) {
       NProgress.start()
     }
 
-    const handleRouteChangeComplete = (url) => {
+    const handleRouteChangeComplete = () => {
       NProgress.done()
-      pageview(url)
     }
 
     const handleRouteChangeError = () => NProgress.done()
