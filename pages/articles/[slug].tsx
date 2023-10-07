@@ -2,7 +2,7 @@ import React from 'react';
 
 import moment from 'moment';
 import Head from 'next/head';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { useRouter } from 'next/router';
 
 import BlockContent from '@sanity/block-content-to-react';
