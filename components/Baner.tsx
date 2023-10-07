@@ -26,7 +26,7 @@ const Baner = ({ title, body, slug }) => (
       <div className="baner-heading-wrapper">
         <h1 className="baner-heading">{title}</h1>
         <span className="baner-text">{body}</span>
-        <Link href="/articles/[slug]" as={`/articles/${slug.current}`} className="baner-button">
+        <Link href={`/articles/${slug.current}`} className="baner-button">
           <span>Čítať viac</span>
           <img src="/images/arrow.svg" alt="Čítať viac" />
         </Link>
