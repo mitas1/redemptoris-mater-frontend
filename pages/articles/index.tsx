@@ -69,7 +69,7 @@ const ShortArticle = ({ date, title, bodyPreview, mainImage, slug }) => {
           </div>
         )}
         <p className="short-article-text">{bodyPreview}</p>
-        <NavLink href="/articles/[slug]" as={`/articles/${slug.current}`}>
+        <NavLink href={`/articles/${slug.current}`}>
           Čítať viac
         </NavLink>
       </article>

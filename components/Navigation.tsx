@@ -4,7 +4,6 @@ import Link from 'next/link';
 
 export interface NavLinkProps extends PropsWithChildren {
   href: string
-  as: string
   back?: boolean
 }
 

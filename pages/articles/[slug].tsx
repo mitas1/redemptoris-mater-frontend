@@ -185,7 +185,7 @@ const Article = ({ article, error }) => {
         )}
         <div className="space"></div>
         <ArticleContent>
-          <NavLink href="/articles" as="/articles" back>
+          <NavLink href="/articles" back>
             Späť na ostatné články
           </NavLink>
         </ArticleContent>
