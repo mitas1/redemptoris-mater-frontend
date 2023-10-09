@@ -11,8 +11,10 @@ const Column = ({ children }) => (
   <div>
     {children}
     <style jsx>{`
-      font-size: 14px;
-      line-height: 1.5;
+      div {
+        font-size: 14px;
+        line-height: 1.5;
+      }
     `}</style>
   </div>
 )
@@ -61,8 +63,8 @@ export const Column2 = () => (
 
 export const Column3 = () => (
   <Column>
-    Mokrohájska cesta 6<br />
-    841 04 Bratislava
+    Súľovská 11<br />
+    949 01 Nitra
   </Column>
 )
 

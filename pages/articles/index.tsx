@@ -21,21 +21,8 @@ const ARTICLES_PER_PAGE = 10
 
 const Button = ({ title, ...rest }) => {
   return (
-    <a {...rest}>
+    <a {...rest} className='link'>
       <div>{title}</div>
-      <style jsx>{`
-        width: auto;
-        cursor: pointer;
-        float: left;
-        padding: 8px 16px;
-        border-radius: 3px;
-        color: #fff;
-        background-color: #2f80f9;
-
-        @media screen and (max-width: 992px) {
-          margin: 0 16px;
-        }
-      `}</style>
     </a>
   )
 }
@@ -47,13 +34,11 @@ const ShortArticle = ({ date, title, bodyPreview, mainImage, slug }) => {
     <div className="short-article-wrapper">
       <div className="image">
         {mainImage && (
-          <Link href="/articles/[slug]" as={`/articles/${slug.current}`}>
-            <a>
-              <img
-                src={urlFor(mainImage).size(300, 200).quality(100).url()}
-                alt="Obrázok článku"
-              />
-            </a>
+          <Link href={`/articles/${slug.current}`}>
+            <img
+              src={urlFor(mainImage).size(300, 200).quality(100).url()}
+              alt="Obrázok článku"
+            />
           </Link>
         )}
       </div>
@@ -62,18 +47,16 @@ const ShortArticle = ({ date, title, bodyPreview, mainImage, slug }) => {
         <h2 className="short-article-title">{title}</h2>
         {mainImage && (
           <div className="image-smartphone">
-            <Link href="/articles/[slug]" as={`/articles/${slug.current}`}>
-              <a>
-                <img
-                  src={urlFor(mainImage).size(400, 180).quality(100).url()}
-                  alt="Obrázok článku"
-                />
-              </a>
+            <Link href={`/articles/${slug.current}`}>
+              <img
+                src={urlFor(mainImage).size(400, 180).quality(100).url()}
+                alt="Obrázok článku"
+              />
             </Link>
           </div>
         )}
         <p className="short-article-text">{bodyPreview}</p>
-        <NavLink href="/articles/[slug]" as={`/articles/${slug.current}`}>
+        <NavLink href={`/articles/${slug.current}`}>
           Čítať viac
         </NavLink>
       </article>

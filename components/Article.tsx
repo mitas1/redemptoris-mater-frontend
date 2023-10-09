@@ -1,6 +1,6 @@
-import { FC } from 'react';
+import { FC, PropsWithChildren } from 'react';
 
-export interface ListWrapperProps {
+export interface ListWrapperProps extends PropsWithChildren {
   className?: string
 }
 

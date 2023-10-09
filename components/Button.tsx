@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, PropsWithChildren } from 'react';
 
 import Link from 'next/link';
 import css from 'styled-jsx/css';
@@ -29,7 +29,7 @@ const styles = css`
   }
 `
 
-interface Button {
+interface Button extends PropsWithChildren {
   className?: string
   href: string
   icon?: string
@@ -52,18 +52,18 @@ const Button: FC<Button> = ({
   const classStr = classes.join(" ")
 
   const content = (
-    <a {...rest} className={classStr}>
+    <>
       {children}
       {icon && <i className="icon">{icon}</i>}
       <style jsx>{styles}</style>
-    </a>
+    </>
   )
 
   if (href) {
-    return <Link href={href}>{content}</Link>
+    return <Link href={href} className={classStr}>{content}</Link>
   }
 
-  return content
+  return <a {...rest} className={classStr}>{content}</a>
 }
 
 export default Button

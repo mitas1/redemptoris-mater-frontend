@@ -44,7 +44,7 @@ const Contact = () => (
       <title>{`Kontakt | ${PAGE_TITLE}`}</title>
       <meta
         name="description"
-        content={`Rektor seminára ${CONTACT_PERSON}, Tel.:${CONTACT_NUMBER}, Email: ${CONTACT_EMAIL}, IBAN: ${IBAN}, Adresa: Mokrohájska cesta 6 841 04 Bratislava`}
+        content={`Rektor seminára ${CONTACT_PERSON}, Tel.:${CONTACT_NUMBER}, Email: ${CONTACT_EMAIL}, IBAN: ${IBAN}, Adresa: Súľovská 11 949 01 Nitra`}
       />
     </Head>
     <Content>

@@ -1,30 +1,23 @@
-import React from 'react';
+import React, { FC, PropsWithChildren, useState } from 'react';
 
 import Head from 'next/head';
 
 import Drawer from '@material/react-drawer';
 
-import {
-  PAGE_TITLE,
-  SECONDARY_FONT,
-} from '../constants';
+import { PAGE_TITLE, SECONDARY_FONT } from '../constants';
 import { GA_TRACKING_ID } from '../lib/gtag';
 import Footer from './Footer';
 import Header from './Header';
 import Menu from './Menu';
+import Script from 'next/script';
 
-const Layout = ({ children }) => {
-  const [open, setOpen] = React.useState(false)
+const Layout: FC<PropsWithChildren> = ({ children }) => {
+  const [open, setOpen] = useState(false);
 
   return (
     <div className="content">
       <Head>
-        <meta charSet="UTF-8" />
         <title>{PAGE_TITLE}</title>
-        <link
-          href="https://fonts.googleapis.com/css?family=Martel:600,700,900&display=swap"
-          rel="stylesheet"
-        />
         <link
           rel="shortcut icon"
           href="/images/favicon.ico"
@@ -59,26 +52,24 @@ const Layout = ({ children }) => {
         />
         <meta
           name="keywords"
-          content="Redemptoris Mater, Žilina, Seminár, Slovensko,
-                        sk, Diecézny misijný seminár, neokatechumenátna cesta, Slovakia"
+          content="Redemptoris Mater, Žilina, Seminár, Slovensko, sk, Diecézny misijný seminár, neokatechumenátna cesta, Slovakia"
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script
+        <Script
           key="gtag-script"
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
         />
-        <script
+        <Script
           key="gtag-script-2"
           dangerouslySetInnerHTML={{
             __html: `
-                        window.dataLayer = window.dataLayer || [];
-                        function gtag(){dataLayer.push(arguments);}
-                        gtag('js', new Date());
-                        gtag('config', '${GA_TRACKING_ID}', {
-                        page_path: window.location.pathname,
-                        });
-                    `,
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+              });
+          `,
           }}
         />
       </Head>
@@ -139,7 +130,9 @@ const Layout = ({ children }) => {
           #nprogress .peg {
             -ms-transform: rotate(3deg) withNamespaces(0px, -4px);
             -webkit-transform: rotate(3deg) withNamespaces(0px, -4px);
-            box-shadow: 0 0 10px #29d, 0 0 5px #29d;
+            box-shadow:
+              0 0 10px #29d,
+              0 0 5px #29d;
             display: block;
             height: 100%;
             opacity: 1;
@@ -152,7 +145,7 @@ const Layout = ({ children }) => {
         `}
       </style>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

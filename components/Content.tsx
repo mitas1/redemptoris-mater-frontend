@@ -1,6 +1,6 @@
-import React, { FC } from 'react';
+import React, { FC, PropsWithChildren } from 'react';
 
-export interface ContectProps {
+export interface ContectProps extends PropsWithChildren {
   className?: string
 }
 
