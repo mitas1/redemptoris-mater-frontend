@@ -42,7 +42,7 @@ const Menu = ({ smartphone, closeDrawer }: Props) => {
   const isIndexPage = pathname === "/"
 
   return (
-    <div className={`${smartphone && "smartphone"} menu`}>
+    <div className={`${smartphone ? "smartphone" : ''} menu`}>
       {MENU_ITEMS.map((item, index) => (
         <Link key={index} href={item.href} tabIndex={0}
           className={pathname === item.href ? "item active" : "item"}>
@@ -63,8 +63,8 @@ const Menu = ({ smartphone, closeDrawer }: Props) => {
           display: flex;
           flex-direction: column;
         }
-        .item-accent,
-        .item {
+        :global(.item-accent),
+        :global(.item) {
           outline: none;
           text-decoration: none;
           letter-spacing: 0.03em;
@@ -74,11 +74,11 @@ const Menu = ({ smartphone, closeDrawer }: Props) => {
           text-transform: uppercase;
           padding: 24px 8px;
         }
-        .item.active,
-        .item:hover {
+        :global(.item.active),
+        :global(.item:hover) {
           color: #000;
         }
-        .item-accent {
+        :global(.item-accent) {
           padding: 16px 24px;
           background-color: #000;
           border-radius: 3px;
@@ -89,10 +89,10 @@ const Menu = ({ smartphone, closeDrawer }: Props) => {
           .menu {
             margin: 16px 0;
           }
-          .item {
+          :global(.item) {
             padding: 16px 8px;
           }
-          .item-accent {
+          :global(.item-accent) {
             margin: 8px 0 0 16px;
           }
         }

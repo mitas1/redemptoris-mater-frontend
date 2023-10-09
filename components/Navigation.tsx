@@ -19,14 +19,14 @@ export const NavLink: FC<NavLinkProps> = ({
         <img height={8} src="/images/arrow_next.svg" alt="Šípka ďalej" />
       )}
       <style jsx>{`
-        .link {
+        :global(.link) {
           margin-top: 64px;
           color: #006cb9;
           font-size: 15px;
           font-weight: 400;
           text-decoration: none;
         }
-        .link img {
+        :global(.link) img {
           margin: 0 18px;
         }
       `}</style>

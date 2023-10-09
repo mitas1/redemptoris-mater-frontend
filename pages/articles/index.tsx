@@ -21,21 +21,8 @@ const ARTICLES_PER_PAGE = 10
 
 const Button = ({ title, ...rest }) => {
   return (
-    <a {...rest}>
+    <a {...rest} className='link'>
       <div>{title}</div>
-      <style jsx>{`
-        width: auto;
-        cursor: pointer;
-        float: left;
-        padding: 8px 16px;
-        border-radius: 3px;
-        color: #fff;
-        background-color: #2f80f9;
-
-        @media screen and (max-width: 992px) {
-          margin: 0 16px;
-        }
-      `}</style>
     </a>
   )
 }

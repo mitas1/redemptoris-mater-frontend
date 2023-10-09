@@ -62,7 +62,7 @@ const Baner = ({ title, body, slug }) => (
         .baner {
           height: 700px;
         }
-        .baner-button {
+        :global(.baner-button) {
           align-items: center;
           background-color: #fff;
           border-radius: 3px;
@@ -78,7 +78,7 @@ const Baner = ({ title, body, slug }) => (
           transition: all 0.2s;
           width: 150px;
         }
-        .baner-button:hover {
+        :global(.baner-button):hover {
           box-shadow: 0 1px 5px #777;
           cursor: pointer;
         }
