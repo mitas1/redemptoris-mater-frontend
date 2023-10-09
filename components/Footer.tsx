@@ -11,8 +11,10 @@ const Column = ({ children }) => (
   <div>
     {children}
     <style jsx>{`
-      font-size: 14px;
-      line-height: 1.5;
+      div {
+        font-size: 14px;
+        line-height: 1.5;
+      }
     `}</style>
   </div>
 )

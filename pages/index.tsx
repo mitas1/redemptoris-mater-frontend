@@ -1,7 +1,5 @@
-import React from 'react';
-
 import moment from 'moment';
-import Image from "next/legacy/image";
+import Image from 'next/legacy/image';
 import Scroll from 'react-scroll';
 
 import Baner from '../components/Baner';
@@ -9,26 +7,21 @@ import Content from '../components/Content';
 import Heading from '../components/Heading';
 import Layout from '../components/Layout';
 import { NavLink } from '../components/Navigation';
-import {
-  DATETIME_MASK,
-  PRIMARY_FONT,
-} from '../constants';
+import { DATETIME_MASK, PRIMARY_FONT } from '../constants';
 import { IBAN } from '../constants/contact';
 import sanity from '../lib/sanity';
 
-const Element = Scroll.Element
+const Element = Scroll.Element;
 
 const ShortArticle = ({ publishedAt, title, bodyPreview, slug }) => {
-  const dateTime = moment(publishedAt).format(DATETIME_MASK)
+  const dateTime = moment(publishedAt).format(DATETIME_MASK);
 
   return (
     <article className="short-article">
       <span className="short-article-date">{dateTime}</span>
       <h2 className="short-article-title">{title}</h2>
       <p className="short-article-text">{bodyPreview}</p>
-      <NavLink href={`/articles/${slug.current}`}>
-        Čítať viac
-      </NavLink>
+      <NavLink href={`/articles/${slug.current}`}>Čítať viac</NavLink>
       <style jsx>{`
         .short-article {
           flex: 1;
@@ -67,8 +60,8 @@ const ShortArticle = ({ publishedAt, title, bodyPreview, slug }) => {
         }
       `}</style>
     </article>
-  )
-}
+  );
+};
 
 export const Donation = ({ file }) => (
   <div className="donation">
@@ -79,8 +72,8 @@ export const Donation = ({ file }) => (
         <br />
         <p>Poukázaním 2% z dane. Každý rok, začiatkom roka</p>
         <a
-          className={`${file && "enabled"} download-button`}
-          href={file ? `${file}?dl=` : "#"}
+          className={`${file && 'enabled'} download-button`}
+          href={file ? `${file}?dl=` : '#'}
         >
           Stiahnuť formulár
         </a>
@@ -149,7 +142,7 @@ export const Donation = ({ file }) => (
       }
     `}</style>
   </div>
-)
+);
 
 const Index = ({ items: { article, mainArticle, donationForm } }) => (
   <Layout>
@@ -161,7 +154,7 @@ const Index = ({ items: { article, mainArticle, donationForm } }) => (
     <Content>
       <Heading withSpacing title="Novinky" />
       <div className="short-article-wrapper">
-        {article.map((item, i) => (
+        {article.map((item) => (
           <ShortArticle key={item._id} {...item} />
         ))}
       </div>
@@ -184,7 +177,7 @@ const Index = ({ items: { article, mainArticle, donationForm } }) => (
       }
     `}</style>
   </Layout>
-)
+);
 
 export async function getStaticProps() {
   return {
@@ -205,7 +198,7 @@ export async function getStaticProps() {
         }`),
     },
     revalidate: 1,
-  }
+  };
 }
 
-export default Index
+export default Index;
