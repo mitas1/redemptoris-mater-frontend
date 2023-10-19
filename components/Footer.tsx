@@ -47,7 +47,7 @@ export const Column11: FC<{ show?: boolean }> = ({ show = false }) => (
     {show && <p>Číslo účtu:</p>}
     <strong>{IBAN}</strong>
     <br />
-    BIC (SWIFT): <strong>TATRSKBX</strong>
+    BIC (SWIFT): <strong>SUBASKBX</strong>
     <br />
     Názov účtu: <strong>Seminar RM</strong>
   </Column>
