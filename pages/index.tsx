@@ -2,7 +2,6 @@ import moment from 'moment';
 import Image from 'next/legacy/image';
 import Scroll from 'react-scroll';
 
-import Baner from '../components/Baner';
 import Content from '../components/Content';
 import Heading from '../components/Heading';
 import Layout from '../components/Layout';
@@ -10,6 +9,7 @@ import { NavLink } from '../components/Navigation';
 import { DATETIME_MASK, PRIMARY_FONT } from '../constants';
 import { IBAN } from '../constants/contact';
 import sanity from '../lib/sanity';
+import Banner from '../components/Banner/Banner';
 
 const Element = Scroll.Element;
 
@@ -146,7 +146,7 @@ export const Donation = ({ file }) => (
 
 const Index = ({ items: { article, mainArticle, donationForm } }) => (
   <Layout>
-    <Baner
+    <Banner
       slug={mainArticle.slug}
       title={mainArticle.title}
       body={mainArticle.bodyPreview}

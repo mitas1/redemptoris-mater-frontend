@@ -1,5 +1,6 @@
 import '@material/react-drawer/dist/drawer.css';
 import 'react-image-lightbox/style.css';
+import '../styles/global.css';
 
 import { useEffect } from 'react';
 
